@@ -1,5 +1,5 @@
 - name: configure DB
   become: yes
-  hosts: DB
+  hosts: db
   roles:
   - db
