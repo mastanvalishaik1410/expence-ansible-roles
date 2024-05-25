@@ -2,6 +2,6 @@
   become: yes
   hosts: db
   vars_files:
-  - credentials1.yaml
+  - creds.yml
   roles:
   - db
