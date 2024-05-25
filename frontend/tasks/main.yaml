@@ -26,7 +26,7 @@
 
 - name: copy backend configure
   ansible.builtin.template:
-    src: expence.conf.j2
+    src: expense.conf.j2
     dest: /etc/nginx/default.d/expense.conf
   notify:
   - restart nginx
