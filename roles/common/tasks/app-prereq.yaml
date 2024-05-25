@@ -1,0 +1,16 @@
+- name: delete app dir
+  ansible.builtin.file:
+    path: "{{app_loc}}"
+    state: absent
+  #ignore_errors: yes
+
+- name: create app dir
+  ansible.builtin.file:
+    path: "{{app_loc}}"
+    state: directory
+
+- name: download and extract code
+  ansible.builtin.unarchive:
+    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{coponent}}-v2.zip"
+    dest: "{{app_loc}}"
+    remote_src: yes
